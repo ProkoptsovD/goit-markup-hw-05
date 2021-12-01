@@ -81,7 +81,7 @@ img {
 
 .page-header .container {
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 .nav {
