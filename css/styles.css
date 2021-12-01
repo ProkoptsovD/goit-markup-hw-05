@@ -14,6 +14,7 @@
   --bcg-color: #2f303a;
   --logo-last-part1-color: #000000;
   --logo-last-part2-color: #ffffff;
+  --card-overlay-bcg-color: rgba(33, 150, 243, 0.9);
 
   --cage-gaps: 30px;
 }
@@ -817,4 +818,33 @@ img {
 .description .example {
   margin: 0 0 4px 0;
   padding: 0;
+}
+
+/* Оформление overlay для карточек с пректами страницы Portfolio */
+.overlay-wrapper {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+
+  color: var(--secondary-text-color);
+  background-color: var(--card-overlay-bcg-color);
+
+  opacity: 0;
+}
+
+.overlay-text {
+  margin: 0;
+  padding: 0;
+
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
 }
