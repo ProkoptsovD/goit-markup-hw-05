@@ -407,6 +407,36 @@ img {
   padding-top: 0;
 }
 
+/* Обертка для текста картиников в секции What we do */
+
+.pics-wrapper {
+  position: relative;
+}
+
+.text-wrapper {
+  position: absolute;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+
+  padding: 27px 0;
+  margin: auto;
+
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.text-wrapper > .text {
+  margin: 0;
+  padding: 0;
+
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--secondary-text-color);
+}
+
 /* Оформление секции Наша команда */
 
 /* Сетка для секции Наша команда */
