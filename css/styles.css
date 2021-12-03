@@ -168,6 +168,8 @@ img {
 .nav .nav-links:focus {
   color: var(--primary-color);
   border: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav .nav-links.current {
@@ -216,10 +218,14 @@ img {
 .auth-nav:hover,
 .auth-nav:focus {
   color: var(--primary-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .auth-nav:hover .icon {
   fill: currentColor;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .auth-nav .icon {
@@ -510,11 +516,15 @@ img {
 .team-social-link:hover,
 .team-social-link:focus {
   background-color: var(--primary-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-link:hover .team-social-icon,
 .team-social-link:focus .team-social-icon {
   fill: var(--secondary-text-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Обертка для заголовка и текста под фото команды */
@@ -580,6 +590,8 @@ img {
 .partners-link:hover .partners-icon,
 .partners-link:focus .partners-icon {
   fill: var(--primary-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Оформление адреса в футуре  */
@@ -630,6 +642,9 @@ img {
 .footer-info .link:focus {
   background-color: var(--primary-color);
   color: var(--secondary-text-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Секция с сслыками на соцсети в футере*/
@@ -687,6 +702,8 @@ img {
 .footer-socials-link:hover,
 .footer-socials-link:focus {
   background-color: var(--primary-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* .footer-socials:hover .footer-socials-icon,
@@ -777,6 +794,9 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .submenu .submenu-button.current {
@@ -829,6 +849,8 @@ img {
 .projects .link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .description {
@@ -885,7 +907,7 @@ img {
   letter-spacing: 0.03em;
 
   transform: scale(0);
-  transition: transform 750ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cards:hover .overlay,
@@ -911,11 +933,13 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
 
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: visible;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
-  /* visibility: hidden; */
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
@@ -962,8 +986,7 @@ img {
   margin: auto;
 }
 
-.close-modal-btn:hover,
-.close-modal-btn:focus {
+.close-modal-btn:hover {
   cursor: pointer;
 }
 
