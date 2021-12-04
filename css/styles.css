@@ -17,6 +17,10 @@
   --card-overlay-bcg-color: rgba(33, 150, 243, 0.9);
 
   --cage-gaps: 30px;
+
+  --transition-time-common: 250ms;
+  --transition-time-overlay-text: 500ms;
+  --transition-func: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -169,7 +173,7 @@ img {
   color: var(--primary-color);
   border: none;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-time-common) var(--transition-func);
 }
 
 .nav .nav-links.current {
@@ -219,13 +223,13 @@ img {
 .auth-nav:focus {
   color: var(--primary-color);
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-time-common) var(--transition-func);
 }
 
 .auth-nav:hover .icon {
   fill: currentColor;
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--transition-time-common) var(--transition-func);
 }
 
 .auth-nav .icon {
@@ -384,6 +388,8 @@ img {
 
 .container .examples {
   display: flex;
+
+  z-index: 1;
 }
 
 .examples {
@@ -419,11 +425,14 @@ img {
   position: relative;
 }
 
+/* .pics-wrapper > img {
+  z-index: 1;
+} */
+
 .text-wrapper {
   position: absolute;
   bottom: 0;
 
-  display: block;
   width: 100%;
 
   padding: 27px 0;
@@ -517,14 +526,15 @@ img {
 .team-social-link:focus {
   background-color: var(--primary-color);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-time-common)
+    var(--transition-func);
 }
 
 .team-social-link:hover .team-social-icon,
 .team-social-link:focus .team-social-icon {
   fill: var(--secondary-text-color);
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--transition-time-common) var(--transition-func);
 }
 
 /* Обертка для заголовка и текста под фото команды */
@@ -591,7 +601,7 @@ img {
 .partners-link:focus .partners-icon {
   fill: var(--primary-color);
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--transition-time-common) var(--transition-func);
 }
 
 /* Оформление адреса в футуре  */
@@ -643,8 +653,9 @@ img {
   background-color: var(--primary-color);
   color: var(--secondary-text-color);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-time-common)
+      var(--transition-func),
+    color var(--transition-time-common) var(--transition-func);
 }
 
 /* Секция с сслыками на соцсети в футере*/
@@ -703,7 +714,8 @@ img {
 .footer-socials-link:focus {
   background-color: var(--primary-color);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-time-common)
+    var(--transition-func);
 }
 
 /* .footer-socials:hover .footer-socials-icon,
@@ -795,8 +807,9 @@ img {
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-time-common)
+      var(--transition-func),
+    box-shadow var(--transition-time-common) var(--transition-func);
 }
 
 .submenu .submenu-button.current {
@@ -850,7 +863,7 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--transition-time-common) var(--transition-func);
 }
 
 .description {
@@ -895,7 +908,7 @@ img {
 
   /* opacity: 0; */
   transform: translatey(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-time-common) var(--transition-func);
 }
 
 .overlay-text {
@@ -907,7 +920,8 @@ img {
   letter-spacing: 0.03em;
 
   transform: scale(0);
-  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-time-overlay-text)
+    var(--transition-func);
 }
 
 .cards:hover .overlay,
@@ -927,15 +941,18 @@ img {
   top: 0;
   left: 0;
 
+  z-index: 2;
+
   width: 100%;
   height: 1024px;
 
   background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   opacity: 1;
   visibility: visible;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--transition-time-common) var(--transition-func),
+    visibility var(--transition-time-common) var(--transition-func);
 }
 
 .backdrop.is-hidden {
